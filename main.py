@@ -1,6 +1,6 @@
 from simple_menu.items import FunctionItem
 from simple_menu.items import MenuItem
-from simple_menu.menu import Menu
+from simple_menu import Menu
 
 
 def main():

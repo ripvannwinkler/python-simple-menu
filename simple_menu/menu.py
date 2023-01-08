@@ -2,9 +2,35 @@ from typing import List
 
 
 class Menu:
+    """
+    Display a list of choices until the user chooses quit
+
+    Example usage::
+
+        from simple_menu.items import FunctionItem
+        from simple_menu.items import MenuItem
+        from simple_menu import Menu
+
+        m = Menu(prompt="Main Menu")
+        m.items.append(FunctionItem(label="Item 1", function=lambda: print("Item 2")))
+
+        m2 = Menu(parent=m, prompt="Sub Menu 1")
+        m2.items.append(FunctionItem(label="Item 2", function=lambda: print("Item 2")))
+        m.items.append(MenuItem(label="Sub Menu 1", menu=m2))
+
+        m.run()
+
+    Attributes:
+
+        prompt(str): The prompt before the item list (default: "Menu")
+        prompt_quit(str): The prompt to quit the application (default: "Quit")
+        prompt_go_back(str): The prompt to exit the sub-menu (default: "Go Back")
+        parent(Menu|None): The parent menu this menu belongs to
+    """
+
     def __init__(
         self,
-        prompt="Choose:",
+        prompt="Menu",
         prompt_quit="Quit",
         prompt_go_back="Go Back",
         parent: "Menu|None" = None,

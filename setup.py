@@ -11,6 +11,7 @@ setup(
     description="A simple console menu",
     packages=find_packages(),
     install_requires=[],
+    python_requires=">=3.7",
     keywords=["python", "menu", "simple menu", "console menu"],
     classifiers=[
         "Development Status :: 3 - Alpha",
