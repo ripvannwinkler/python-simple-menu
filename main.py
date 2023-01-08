@@ -4,12 +4,12 @@ from simple_menu.menu import Menu
 
 
 def main():
-    m = Menu()
-    m.items.append(FunctionItem(label="test", function=lambda: print("test")))
+    m = Menu(prompt="Main Menu")
+    m.items.append(FunctionItem(label="Item 1", function=lambda: print("Item 2")))
 
-    m2 = Menu(parent=m)
-    m2.items.append(FunctionItem(label="test2", function=lambda: print("test2")))
-    m.items.append(MenuItem(label="sub menu", menu=m2))
+    m2 = Menu(parent=m, prompt="Sub Menu 1")
+    m2.items.append(FunctionItem(label="Item 2", function=lambda: print("Item 2")))
+    m.items.append(MenuItem(label="Sub Menu 1", menu=m2))
 
     m.run()
 

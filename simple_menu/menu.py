@@ -43,9 +43,8 @@ class Menu:
                     self.items[choice].exec()
                     continue
 
-                if choice == len(self.items):
-                    if self.parent:
-                        break
+                elif self.parent and choice == len(self.items):
+                    break
 
                 exit(0)
 
