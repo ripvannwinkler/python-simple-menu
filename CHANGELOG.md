@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.4 (2023-01-09)
+### Fix
+* Add long_description_content_type ([`a9dd263`](https://github.com/ripvannwinkler/python-simple-menu/commit/a9dd2633fc2066cdd6fda5bdc07976ca63f39029))
+
 ## v1.0.3 (2023-01-09)
 ### Fix
 * Fix package desc ([`0a8c13f`](https://github.com/ripvannwinkler/python-simple-menu/commit/0a8c13ff201e421cdcc42562472379957683a28e))
