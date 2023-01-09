@@ -3,7 +3,7 @@ from setuptools import setup
 
 VERSION = "1.0.3"
 
-with open("README.md", "utf8", "r") as f:
+with open("README.md", encoding="utf8", mode="r") as f:
     LONG_DESCRIPTION = f.read()
 
 setup(
@@ -13,6 +13,7 @@ setup(
     author_email="chrisvann01@gmail.com",
     description="A simple console menu",
     long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/markdown",
     url="https://github.com/ripvannwinkler/python-simple-menu",
     packages=find_packages(),
     install_requires=[],
