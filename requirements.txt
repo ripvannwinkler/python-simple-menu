@@ -19,14 +19,12 @@ pkginfo==1.9.6
 Pygments==2.14.0
 python-gitlab==3.12.0
 python-semantic-release==7.32.2
-python-simple-menu==1.0.4
 pywin32-ctypes==0.2.0
 readme-renderer==37.3
 requests==2.28.1
 requests-toolbelt==0.10.1
 rfc3986==2.0.0
 semver==2.13.0
--e git+ssh://git@github.com/ripvannwinkler/python-simple-menu.git@bc3f7943150c810566f0a6492329e7a8c2d7d278#egg=simple_menu
 six==1.16.0
 smmap==5.0.0
 tomlkit==0.11.6
