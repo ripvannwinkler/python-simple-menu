@@ -1,10 +1,12 @@
-from setuptools import find_packages
-from setuptools import setup
+from setuptools import setup, find_packages
 
 VERSION = "1.0.4"
 
 with open("README.md", encoding="utf8", mode="r") as f:
     LONG_DESCRIPTION = f.read()
+
+with open("README.md", "r") as f:
+    long_description = f.read()
 
 setup(
     name="python_simple_menu",
