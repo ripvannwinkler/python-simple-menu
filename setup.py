@@ -1,7 +1,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 setup(
     name="simple_menu",
