@@ -5,7 +5,7 @@ from simple_menu import Menu
 
 def main():
     m = Menu(prompt="Main Menu")
-    m.items.append(FunctionItem(label="Item 1", function=lambda: print("Item 2")))
+    m.items.append(FunctionItem(label="Item 1", function=lambda: print("Item 1")))
 
     m2 = Menu(parent=m, prompt="Sub Menu 1")
     m2.items.append(FunctionItem(label="Item 2", function=lambda: print("Item 2")))
