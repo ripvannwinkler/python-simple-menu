@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v1.0.5 (2023-01-09)
+
+
 ## v1.0.4 (2023-01-09)
 ### Fix
 * Add long_description_content_type ([`a9dd263`](https://github.com/ripvannwinkler/python-simple-menu/commit/a9dd2633fc2066cdd6fda5bdc07976ca63f39029))
