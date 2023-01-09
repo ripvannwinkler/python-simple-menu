@@ -3,12 +3,16 @@ from setuptools import setup
 
 VERSION = "1.0.2"
 
+with open("README.md", "utf8", "r") as f:
+    LONG_DESCRIPTION = f.read()
+
 setup(
-    name="simple_menu",
+    name="python_simple_menu",
     version=VERSION,
     author="Chris Vann",
     author_email="chrisvann01@gmail.com",
     description="A simple console menu",
+    long_description=LONG_DESCRIPTION,
     url="https://github.com/ripvannwinkler/python-simple-menu",
     packages=find_packages(),
     install_requires=[],
