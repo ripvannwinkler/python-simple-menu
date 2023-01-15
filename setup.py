@@ -19,7 +19,7 @@ setup(
     url="https://github.com/ripvannwinkler/python-simple-menu",
     packages=find_packages(),
     install_requires=[],
-    python_requires=">=3.7",
+    python_requires=">=3.8",
     keywords=["python", "menu", "simple menu", "console menu"],
     classifiers=[
         "License :: OSI Approved :: MIT License",
