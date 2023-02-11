@@ -5,3 +5,5 @@ dist/
 .idea/
 
 __pycache__/
+
+.python-version
