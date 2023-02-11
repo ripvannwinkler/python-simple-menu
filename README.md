@@ -1,4 +1,4 @@
-# Simple Menu
+# python-simple-menu
 
 A lightweight console menu package for python applications. No frills, no fuss.
 
