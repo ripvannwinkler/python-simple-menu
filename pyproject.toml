@@ -18,8 +18,9 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
-version_toml = ["pyproject.toml:tool.poetry.version"]
 branch = "main"
-upload_to_pypi = false
+major_on_zero = false
+upload_to_PyPI = true
 upload_to_release = true
 build_command = "pip install poetry && poetry build"
+version_toml = ["pyproject.toml:tool.poetry.version"]
