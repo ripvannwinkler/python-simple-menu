@@ -1,4 +1,5 @@
 from typing import List
+from typing import Optional
 
 
 class Menu:
@@ -7,35 +8,41 @@ class Menu:
 
     Example usage::
 
-        from simple_menu.items import FunctionItem
-        from simple_menu.items import MenuItem
-        from simple_menu import Menu
+                                                                                                                                    from simple_menu.items import FunctionItem
+                                                                                                                                    from simple_menu.items import MenuItem
+                                                                                                                                    from simple_menu import Menu
 
-        m = Menu(prompt="Main Menu")
-        m.items.append(FunctionItem(label="Item 1", function=lambda: print("Item 2")))
+                                                                                                                                    m = Menu(prompt="Main Menu")
+                                                                                                                                    m.items.append(FunctionItem(label="Item 1", function=lambda: print("Item 2")))
 
-        m2 = Menu(parent=m, prompt="Sub Menu 1")
-        m2.items.append(FunctionItem(label="Item 2", function=lambda: print("Item 2")))
-        m.items.append(MenuItem(label="Sub Menu 1", menu=m2))
+                                                                                                                                    m2 = Menu(parent=m, prompt="Sub Menu 1")
+                                                                                                                                    m2.items.append(FunctionItem(label="Item 2", function=lambda: print("Item 2")))
+                                                                                                                                    m.items.append(MenuItem(label="Sub Menu 1", menu=m2))
 
-        m.run()
+                                                                                                                                    m.run()
 
     Attributes:
 
-        prompt(str): The prompt before the item list (default: "Menu")
-        prompt_quit(str): The prompt to quit the application (default: "Quit")
-        prompt_go_back(str): The prompt to exit the sub-menu (default: "Go Back")
-        parent(Menu|None): The parent menu this menu belongs to
+                                                                                                                                    prompt(str): The prompt before the item list (default: "Menu")
+                                                                                                                                    prompt_quit(str): The prompt to quit the application (default: "Quit")
+                                                                                                                                    prompt_go_back(str): The prompt to exit the sub-menu (default: "Back")
+                                                                                                                                    parent(Menu|None): The parent menu this menu belongs to
     """
 
     def __init__(
         self,
         prompt="Menu",
-        prompt_quit="Quit",
-        prompt_go_back="Go Back",
-        parent: "Menu|None" = None,
+        prompt_quit: Optional[str] = None,
+        prompt_go_back: Optional[str] = None,
+        parent: Optional["Menu"] = None,
     ):
-        from .menu_items import BaseItem
+        from .items import BaseItem
+
+        if prompt_go_back is None:
+            prompt_go_back = parent.prompt if parent else "Back"
+
+        if prompt_quit is None:
+            prompt_quit = parent.prompt_quit if parent else "Quit"
 
         self.prompt = prompt
         self.prompt_quit = prompt_quit
@@ -46,33 +53,37 @@ class Menu:
     def run(self):
 
         while True:
-
-            print()
             print(self.prompt)
 
-            index = 0
-
+            # render each menu item
             for index, item in enumerate(self.items, start=1):
-                print(f"{index}: {item.label}")
+                print(f" {index}: {item.label}")
 
+            # render "go back" prompt
             if self.parent:
-                index += 1
-                print(f"{index}: {self.prompt_go_back}")
+                print(f" B: {self.prompt_go_back}")
 
-            index += 1
-            print(f"{index}: {self.prompt_quit}")
+            # render "quit" prompt
+            print(f" Q: {self.prompt_quit}")
 
             try:
-                choice = int(input("> ").strip()) - 1
+                choice = input("> ").strip()
 
-                if 0 <= choice < len(self.items):
-                    self.items[choice].exec()
-                    continue
-
-                elif self.parent and choice == len(self.items):
+                # go back to parent menu
+                if choice.upper() == "B" and self.parent:
                     break
 
-                exit(0)
+                # exit the application
+                if choice.upper() == "Q":
+                    exit(0)
+
+                # execute the chosen item
+                index = int(choice) - 1
+                self.items[index].exec()
+                continue
+
+            except IndexError:
+                print(f"Invalid choice. Try again.")
 
             except Exception as e:
                 print(f"Error: {e}")

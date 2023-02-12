@@ -1,6 +1,6 @@
-from python_simple_menu.menu_items import FunctionItem
-from python_simple_menu.menu_items import MenuItem
-from python_simple_menu.menu import Menu
+from python_simple_menu import Menu
+from python_simple_menu.items import FunctionItem
+from python_simple_menu.items import MenuItem
 
 
 def main():

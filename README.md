@@ -6,35 +6,34 @@ A lightweight console menu package for python applications. No frills, no fuss.
 
 To install to your project, run the following command:
 
-```commandline
-pip install simple_menu
+```shell
+pip install python_simple_menu
 ```
 
-## How to Use
+## How to use
 
 ```python
 def main():
-	# Create a main menu
-	m = Menu(prompt="Main Menu")
-	m.items.append(FunctionItem(label="Item 1", function=lambda: print("Item 1")))
+    main_menu = Menu(prompt="Main Menu")
+    main_menu.items.append(FunctionItem("Item 1", __item1))
+    main_menu.items.append(FunctionItem("Item 2", __item2))
+    
+    sub_menu1 = Menu(prompt="Sub-Menu 1", parent=main_menu)
+    sub_menu1.items.append(FunctionItem("Item 1", __item1))
+    sub_menu1.items.append(FunctionItem("Item 2", __item2))
+    
+    main_menu.items.append(MenuItem(sub_menu1))    
+    main_menu.run()
 
-	# Create a sub-menu
-	m2 = Menu(parent=m, prompt="Sub Menu 1")
-	m2.items.append(FunctionItem(label="Item 2", function=lambda: print("Item 2")))
+def __item1():
+    print('lorem ipsum...')
 
-	# Add the sub-menu to the main menu
-	m.items.append(MenuItem(label="Sub Menu 1", menu=m2))
-
-	# Run the menu
-	m.run()
-
-
-if __name__ == "__main__":
-	main()
-
+def __item2():
+    print('dolor sit amet...')
 ```
 
-The menu will run until the user chooses the Quit item, which will exit the application.
-When entering a sub-menu, an additional "go back" option is added which will return the
-user to the parent menu. The various prompts can be customized in the Menu()
-constructor.
+The menu will run until the user chooses Quit ("Q"), which will exit the
+application. If the menu has a parent menu, an additional Back ("B") option
+will be rendered which will return the user to the parent menu.
+
+See the `python_simple_menu/examples` directory for other usages.

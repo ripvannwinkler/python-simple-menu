@@ -3,6 +3,7 @@ from abc import abstractmethod
 from typing import Callable
 from typing import Dict
 from typing import List
+from typing import Optional
 from typing import Union
 
 
@@ -30,8 +31,8 @@ class MenuItem(BaseItem):
 
     from .menu import Menu
 
-    def __init__(self, label: str, menu: Menu):
-        super().__init__(label)
+    def __init__(self, menu: Menu, label: Optional[str] = None):
+        super().__init__(label or menu.prompt)
         self.menu = menu
 
     def exec(self):
