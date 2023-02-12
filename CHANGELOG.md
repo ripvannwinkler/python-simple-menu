@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.14 (2023-02-12)
+### Fix
+* Set patch_without_tag ([`dbe957e`](https://github.com/ripvannwinkler/python-simple-menu/commit/dbe957e5a7942027c36de28c9a2d1e73d7764494))
+
 ## v1.1.13 (2023-02-12)
 ### Fix
 * Change release opts ([`253625b`](https://github.com/ripvannwinkler/python-simple-menu/commit/253625b0d93beec058d767eb29ee8ad11573a1cc))
