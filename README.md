@@ -2,6 +2,11 @@
 
 A lightweight console menu package for python applications. No frills, no fuss.
 
+NOTE: This package is fully functional, but it was developed with the intent to
+familiarize myself with python package management and deployment techniques. As
+such, there may be some weird commit history or arbitrary version bumps as I
+experiment with various tools and best practices.
+
 ## Installing
 
 To install to your project, run the following command:
