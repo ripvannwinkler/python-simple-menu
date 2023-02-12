@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v1.1.15-beta.1 (2023-02-12)
+
+
 ## v1.1.14 (2023-02-12)
 ### Fix
 * Set patch_without_tag ([`dbe957e`](https://github.com/ripvannwinkler/python-simple-menu/commit/dbe957e5a7942027c36de28c9a2d1e73d7764494))
