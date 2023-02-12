@@ -22,6 +22,6 @@ branch = "main"
 major_on_zero = false
 upload_to_release = false
 upload_to_repository = true
-commit_subject = "v{version}"
+commit_subject = "chore(release): v{version}"
 build_command = "pip install poetry && poetry build"
 version_toml = ["pyproject.toml:tool.poetry.version"]
