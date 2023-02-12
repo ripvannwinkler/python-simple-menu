@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-simple-menu"
-version = "1.1.7"
+version = "1.1.9"
 description = "Yet another simple console menu"
 authors = ["Chris Vann <chrisvann01@gmail.com>"]
 readme = "README.md"
@@ -20,7 +20,8 @@ build-backend = "poetry.core.masonry.api"
 [tool.semantic_release]
 branch = "main"
 major_on_zero = false
-upload_to_PyPI = true
-upload_to_release = true
+upload_to_PyPI = false
+upload_to_release = false
+upload_to_repository = false
 build_command = "pip install poetry && poetry build"
 version_toml = ["pyproject.toml:tool.poetry.version"]
